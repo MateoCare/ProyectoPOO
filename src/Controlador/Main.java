@@ -33,5 +33,21 @@ public class Main {
 
         Evento evento3 = new Evento(nombreEvento, ubicacion, fecha);
         System.out.println(evento3);
+
+        System.out.println("Desea agegar algun asistenete? Responda por Si o No");
+        String rta = sc.nextLine();
+        if (rta == "Si"){
+            crearAsistente();
+        }
+    }
+
+    public static void crearAsistente(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el nombre del asistente: ");
+        String nombreAsistente = sc.nextLine();
+        System.out.println("Introduce la edad del asistente: ");
+        Integer edadAsistente = sc.nextInt();
+
+        Asistente asistente5 = new  Asistente(nombreAsistente, edadAsistente);
     }
 }

@@ -3,7 +3,6 @@ package Modelo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Evento {
     private String descripcion;
@@ -28,8 +27,8 @@ public class Evento {
                 '}';
     }
 
-    public void setAsistentes(List<Asistente> asistentes) {
-        this.asistentes = asistentes;
+    public void agregarAsistente(Asistente asistente) {
+        this.asistentes.add(asistente);
     }
 
 }

@@ -2,6 +2,8 @@ package Controlador;
 
 import Modelo.Asistente;
 import Modelo.Evento;
+
+import java.util.List;
 import java.util.Scanner;
 
 import java.time.LocalDate;
@@ -17,11 +19,11 @@ public class Main {
         Asistente asistente3 = new Asistente("Tomas",22);
         Asistente asistente4 = new Asistente("Juan",21);
 
-        crearEvento();
+        System.out.println(crearEvento());
 
     }
 
-    public static void crearEvento(){
+    public static Evento crearEvento(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Introduce el nombre del evento: ");
@@ -32,22 +34,24 @@ public class Main {
         LocalDate fecha = LocalDate.parse(sc.nextLine());
 
         Evento evento3 = new Evento(nombreEvento, ubicacion, fecha);
-        System.out.println(evento3);
 
         System.out.println("Desea agegar algun asistenete? Responda por Si o No");
         String rta = sc.nextLine();
-        if (rta == "Si"){
-            crearAsistente();
+        if (rta.equals("Si")) {
+            evento3.agregarAsistente(crearAsistente());
         }
+
+        return evento3;
     }
 
-    public static void crearAsistente(){
+    public static Asistente crearAsistente(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce el nombre del asistente: ");
         String nombreAsistente = sc.nextLine();
         System.out.println("Introduce la edad del asistente: ");
         Integer edadAsistente = sc.nextInt();
 
-        Asistente asistente5 = new  Asistente(nombreAsistente, edadAsistente);
+        Asistente asistente = new  Asistente(nombreAsistente, edadAsistente);
+        return asistente;
     }
 }

@@ -3,17 +3,18 @@ package Controlador;
 import Modelo.Asistente;
 import Modelo.Evento;
 import Vista.Interfaz;
+import Vista.Pantalla;
 
 import java.util.Scanner;
 
 import java.time.LocalDate;
 
 public class Controlador {
-    private Interfaz interfaz;
+    private Pantalla pantalla;
 
     public Controlador() {
-        interfaz = new Interfaz();
-        interfaz.crearVentanaInicio();
+        pantalla = new Pantalla();
+        pantalla.crearVentanaInicio();
 
         Evento evento1 = new Evento("Conferencia", "Centro cultural", LocalDate.of(2025,6,12));
 

@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class Interfaz extends JFrame {
+public class Pantalla {
     public void crearVentanaInicio() {
         JFrame ventanaPrincipal = new JFrame("Gestion de eventos");
         ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
